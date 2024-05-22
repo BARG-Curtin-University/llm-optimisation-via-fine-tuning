@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
+and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+  <front>
+    <journal-meta>
+      <journal-id/>
+      <journal-title-group>
+        <journal-title>BARG Curtin University</journal-title>
+      </journal-title-group>
+      <issn/>
+      <publisher>
+        <publisher-name/>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <title-group>
+        <article-title>Optimising Large Language Models Through Fine-Tuning:
+Methods and Best Practices</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes">
+          <contrib-id contrib-id-type="orcid">0000-0002-0950-6396</contrib-id>
+          <name>
+            <surname>Borck</surname>
+            <given-names>Michael</given-names>
+          </name>
+          <string-name>Michael Borck</string-name>
+          <email>michael.borck@curtin.edu.au</email>
+          <role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+          <role vocab="https://credit.niso.org" vocab-term="project administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
+          <role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
+          <role>Visualisation</role>
+          <xref ref-type="aff" rid="aff-1">a</xref>
+          <xref ref-type="corresp" rid="cor-1">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff-1">
+        <institution-wrap>
+          <institution>Business Information Systems, Curtin University, Perth
+Australia</institution>
+        </institution-wrap>
+      </aff>
+      <author-notes>
+        <corresp id="cor-1">michael.borck@curtin.edu.au</corresp>
+      </author-notes>
+      <pub-date date-type="pub" publication-format="electronic" iso-8601-date="2024-05-22">
+        <year>2024</year>
+        <month>5</month>
+        <day>22</day>
+      </pub-date>
+      <history/>
+      <abstract>
+        <p>“Large language models (LLMs) have revolutionised natural language
+processing (NLP) by providing advanced capabilities for tasks such as
+text generation, translation, summarisation, and question answering.
+Despite their power, LLMs often require fine-tuning to address specific
+tasks or domains effectively. This paper provides a comprehensive
+overview of fine-tuning LLMs, discussing various approaches, methods,
+and best practices. We explore how fine-tuning can enhance model
+performance, reduce training costs, and yield more accurate,
+context-specific results.”</p>
+      </abstract>
+      <kwd-group kwd-group-type="author">
+        <kwd>Fine-tuning</kwd>
+        <kwd>Large language models (LLMs)</kwd>
+        <kwd>Optimisation</kwd>
+        <kwd>Natural Language Processing (NLP)</kwd>
+        <kwd>Best practices</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="introduction">
+      <title>1 Introduction</title>
+      <p>Large language models (LLMs), pre-trained on extensive datasets,
+  have become indispensable tools in NLP, enabling sophisticated
+  solutions across diverse applications. However, their general-purpose
+  nature often necessitates fine-tuning to meet specific task or domain
+  requirements. Fine-tuning involves adapting pre-trained models on
+  smaller, task-specific datasets, thereby improving their performance
+  in targeted applications while preserving their broad language
+  understanding. For instance, a Google study demonstrated a 10%
+  accuracy improvement in sentiment analysis through fine-tuning.1 This
+  paper aims to elucidate the importance of fine-tuning, outline various
+  techniques, and present best practices for effective
+  implementation.</p>
+    </sec>
+    <sec id="what-is-fine-tuning-and-why-is-it-necessary">
+      <title>2 What is Fine-Tuning and Why is it Necessary?</title>
+      <p>Fine-tuning entails adjusting the parameters of a pre-trained LLM
+  to align with a particular task or domain. While pre-trained models
+  like GPT possess extensive language knowledge, they often lack
+  domain-specific expertise. Fine-tuning bridges this gap, enabling
+  models to learn from specialised data and thus enhancing their
+  accuracy and relevance.</p>
+      <sec id="customisation">
+        <title>2.1 Customisation</title>
+        <p>Domains such as legal, medical, or business analytics have unique
+    language patterns and terminologies. Fine-tuning allows LLMs to
+    grasp these specificities, producing content that is accurate and
+    contextually relevant to the domain.</p>
+      </sec>
+      <sec id="data-compliance">
+        <title>2.2 Data Compliance</title>
+        <p>Industries like healthcare, finance, and law require strict
+    adherence to data compliance standards. Fine-tuning LLMs on
+    proprietary or regulated datasets ensures compliance and enhances
+    data ecurity and privacy.</p>
+      </sec>
+      <sec id="limited-labeled-data">
+        <title>2.3 Limited Labeled Data</title>
+        <p>In scenarios where labeled data is scarce, fine-tuning maximises
+    the utility of available data, improving model accuracy and
+    relevance without extensive data requirements.</p>
+      </sec>
+    </sec>
+    <sec id="primary-fine-tuning-approaches">
+      <title>3 Primary Fine-Tuning Approaches</title>
+      <p>Fine-tuning strategies can vary based on the task’s specificity.
+  The two primary approaches are:</p>
+      <sec id="feature-extraction-repurposing">
+        <title>3.1 Feature Extraction (Repurposing)</title>
+        <p>This approach treats the pre-trained LLM as a fixed feature
+    extractor, training only the final layers on task-specific data. It
+    leverages the model’s pre-existing language features, offering a
+    cost-effective and efficient fine-tuning method.</p>
+      </sec>
+      <sec id="full-fine-tuning">
+        <title>3.2 Full Fine-Tuning</title>
+        <p>Here, the entire model is retrained on task-specific data. This
+    method is suitable for significantly different datasets from the
+    pre-training corpus, requiring more computational resources but
+    potentially yielding superior adaptation and performance.</p>
+      </sec>
+    </sec>
+    <sec id="prominent-fine-tuning-methods">
+      <title>4 Prominent Fine-Tuning Methods</title>
+      <sec id="supervised-fine-tuning">
+        <title>4.1 Supervised Fine-Tuning</title>
+        <p>In supervised fine-tuning, models are trained on labeled datasets
+    to predict specific outputs. Techniques include:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p><bold>Basic Hyperparameter Tuning:</bold> Manually adjusting
+        hyperparameters like learning rate and batch size.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Transfer Learning:</bold> Adapting a pre-trained model
+        to new tasks with limited data.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Multi-Task Learning:</bold> Training on multiple
+        related tasks simultaneously to improve generalisation.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Few-Shot Learning:</bold> Adapting the model with
+        minimal task-specific data.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Task-Specific Fine-Tuning:</bold> Tailoring the model
+        to excel in a single, well-defined task.</p>
+          </list-item>
+        </list>
+      </sec>
+      <sec id="reinforcement-learning-from-human-feedback-rlhf">
+        <title>4.2 Reinforcement Learning from Human Feedback (RLHF)</title>
+        <p>RLHF involves training models through human interactions,
+    incorporating feedback to refine model outputs. Techniques
+    include:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p><bold>Reward Modeling:</bold> Using human-provided rankings
+        to guide model adjustments.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Proximal Policy Optimisation (PPO):</bold> Iteratively
+        updating policies to maximise expected rewards.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Comparative Ranking:</bold> Learning from relative
+        rankings of multiple outputs.</p>
+          </list-item>
+          <list-item>
+            <p><bold>Preference Learning:</bold> Training based on human
+        preferences between outputs.</p>
+          </list-item>
+        </list>
+      </sec>
+    </sec>
+    <sec id="fine-tuning-process-and-best-practices">
+      <title>5 Fine-Tuning Process and Best Practices</title>
+      <list list-type="order">
+        <list-item>
+          <p><bold>Data Preparation:</bold> Curate and preprocess datasets
+      to ensure relevance and quality, employing data augmentation
+      techniques as needed.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Model Selection:</bold> Choose a pre-trained model that
+      aligns with the target task, considering architecture,
+      specifications, and performance.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Parameter Configuration:</bold> Optimise learning rates,
+      batch sizes, and other parameters to balance learning efficiency
+      and overfitting risks.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Validation:</bold> Evaluate model performance using
+      metrics like accuracy and loss, refining parameters and
+      architecture based on results.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Iteration:</bold> Iteratively adjust fine-tuning
+      strategies to enhance model capabilities until desired performance
+      levels are achieved.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Deployment:</bold> Integrate the fine-tuned model into
+      practical applications, considering scalability, performance, and
+      security.</p>
+        </list-item>
+      </list>
+    </sec>
+    <sec id="applications-of-fine-tuning">
+      <title>6 Applications of Fine-Tuning</title>
+      <sec id="sentiment-analysis">
+        <title>6.1 Sentiment Analysis</title>
+        <p>Fine-tuned models can analyse sentiment in specific datasets,
+    providing insights from customer feedback and social media.</p>
+      </sec>
+      <sec id="chatbots">
+        <title>6.2 Chatbots</title>
+        <p>Fine-tuning enables chatbots to generate more relevant and
+    engaging conversations, enhancing customer interactions in various
+    sectors.</p>
+      </sec>
+      <sec id="summarisation">
+        <title>6.3 Summarisation</title>
+        <p>Fine-tuned models can efficiently summarise lengthy documents,
+    aiding in information retrieval and knowledge management.</p>
+      </sec>
+    </sec>
+    <sec id="conclusion">
+      <title>7 Conclusion</title>
+      <p>Fine-tuning LLMs is a vital process for adapting general-purpose
+  models to specific tasks or domains. By employing the methods and best
+  practices discussed, organisations can significantly enhance model
+  performance and achieve contextually accurate results. Turing’s
+  expertise in fine-tuning and training LLMs offers tailored solutions
+  for seamless business integration, enabling advanced LLM-powered
+  applications at scale.</p>
+    </sec>
+  </body>
+  <back>
+</back>
+</article>
